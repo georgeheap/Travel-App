@@ -59,6 +59,8 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter "/devise/"
+  add_filter "/helpers/"
+  add_filter "/controllers/users/"
 end
 require 'cucumber/rails'
 require 'capybara/cucumber'

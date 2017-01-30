@@ -16,10 +16,10 @@ module SeedData
         User.create(username: "Simba", email: "lion@king.com", password: "123456")
       end
       unless Destination.find_by(name: "London")
-        Destination.create(name: "London", description: "Capital City of the UK. Filled with wonderful sites from Buckingham Palace to the British Museum.", lat: 51.505234, lng: -0.128919)
+        Destination.create(name: "London", default_img: "London.jpg", description: "Capital City of the UK. Filled with wonderful sites from Buckingham Palace to the British Museum.", lat: 51.505234, lng: -0.128919)
       end
       unless Destination.find_by(name: "Iceland")
-        Destination.create(name: "Iceland", description: "This amazing country is full of natural wonder.", lat: 64.1265, lng: 21.8174)
+        Destination.create(name: "Iceland", default_img: "Iceland.jpg", description: "This amazing country is full of natural wonder.", lat: 64.1265, lng: 21.8174)
       end
     end
   end

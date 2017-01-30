@@ -10,6 +10,12 @@ class UsersController < ApplicationController
       format.json {}
     end
   end
+  def new
+    super
+  end
+  def create
+    super    
+  end
 
   def edit
     @user = User.find(params[:id])

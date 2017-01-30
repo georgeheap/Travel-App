@@ -1,7 +1,13 @@
-And(/^I am logged in as "([^"]*)"$/) do |email|
-  user = User.find_by(email: email)
-  log_on_as(user)
+And /^I am a new, authenticated user$/ do
+  email = 'lion@king.com'
+  password = '123456'
+
+  visit 'users/sign_in'
+  fill_in 'Email', :with => email
+  fill_in 'Password', :with => password
+  click_button "Log in"
 end
+
 
 When(/^I navigate to users edit page as "([^"]*)"$/) do |email|
   user = User.find_by(email: email)

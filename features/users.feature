@@ -2,12 +2,21 @@ Feature: User can edit their profile
 
   Background:
     Given sample data has been loaded
+    And I am a new, authenticated user
 
     @poltergeist
-    Scenario: 	As a logged in user, when I navigate to /id/edit, I should be able to see the edit page
-      And I am logged in as "lion@king.com"
-    When I navigate to users edit page as "lion@king.com"
-    Then I should see Edit My Profile
+    Scenario: 	As a logged in user, I am able to edit my account
+      When I navigate to users edit page as "lion@king.com"
+      Then I should see Edit My Profile
+
+    # @poltergeist
+    # Scenario: A user is able to edit their account
+    #   When I navigate to "/users/edit"
+    #   Then I should see the "Bio" input form
+    #   When I enter a new info into the bio field
+    #     And I click on "Update User"
+    #   Then the current user's bio should be updated
+
 
     @poltergeist
     Scenario: Navigating to the index page
