@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'figaro'
 gem 'geocoder'
 
@@ -46,10 +46,6 @@ group :development, :test do
   gem 'pry'
 end
 
-group :test do
-  gem 'tsuite'
-
-end
 
 group :production do
   gem 'rails_12factor'
@@ -66,3 +62,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem 'tsuite'
+  gem 'rails-controller-testing'
+  gem 'selenium-webdriver', '< 3.0'
+end
