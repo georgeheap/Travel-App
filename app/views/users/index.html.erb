@@ -2,10 +2,10 @@
 
 <% @users.each do |user| %>
 
-  <%= user.username %>
-  <%= user.from_location %>
-  <%= user.current_location %>
-  <%= user.bio %>
+  <%= user.username %> -
+  <%= user.from_location %> -
+  <%= user.current_location %> -
+  <%= user.bio %> -
   <%= link_to 'Show', user %>
   <%= link_to 'Edit', edit_user_path(user) %>
 

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-
+    @destinations = Destination.all
   end
 
   def update
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def user_params
     unless params[:is_admin]
-      params.require(:user).permit(:username, :password, :email, :from_location, :bio)
+      params.require(:user).permit(:username, :password, :email, :from_location, :current_location, :bio)
     else
 
     end
