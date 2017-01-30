@@ -8,3 +8,9 @@ Feature: User can edit their profile
       And I am logged in as "lion@king.com"
     When I navigate to users edit page as "lion@king.com"
     Then I should see Edit My Profile
+
+    @poltergeist
+    Scenario: Navigating to the index page
+    When I navigate to "users"
+    Then I should see "Users"
+      And I should see "Simba"

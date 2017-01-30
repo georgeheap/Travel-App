@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(params[:id])
 
   end
 
@@ -22,6 +22,16 @@ class UsersController < ApplicationController
       redirect_to @user, notice: "Successfully updated user."
     else
       redirect_to @user, notice: "Unable to update user."
+    end
+  end
+
+  private
+
+  def user_params
+    unless params[:is_admin]
+      params.require(:user).permit(:username, :password, :email, :from_location, :bio)
+    else
+
     end
   end
 end
