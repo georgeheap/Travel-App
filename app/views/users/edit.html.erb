@@ -1,0 +1,32 @@
+<h1>Edit My Profile</h1>
+
+<%= form_for(stamp) do |f| %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :from_location %>
+    <%= f.text_field :from_location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_location %>
+    <%= f.collection_select(:current_location, 0, Destination.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_field :bio %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
