@@ -12,10 +12,8 @@ Feature: Destinations Pages
     Then I should see "Iceland"
       And I should see "2" images
 
-
-
-    # @poltergeist
-    # Scenario: Navigating to the destinations show page
-    # When I navigate to destinations show page with "id"
-    # Then I should see "Name"
-    #   And I should see "Description"
+    @poltergeist
+    Scenario: Navigating to destinations show page
+    When I navigate to destination show page "London"
+    Then I should see "Name"
+      And I should see "Capital City of the UK"

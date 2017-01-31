@@ -8,7 +8,6 @@ And /^I am a new, authenticated user$/ do
   click_button "Log in"
 end
 
-
 When(/^I navigate to users edit page as "([^"]*)"$/) do |email|
   user = User.find_by(email: email)
   visit "/users/#{user.id}/edit"
