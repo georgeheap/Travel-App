@@ -8,14 +8,10 @@ Feature: User can edit their profile
     Scenario: 	As a logged in user, I am able to edit my account
       When I navigate to users edit page as "lion@king.com"
       Then I should see Edit My Profile
-
-    # @poltergeist
-    # Scenario: A user is able to edit their account
-    #   When I navigate to "/users/edit"
-    #   Then I should see the "Bio" input form
-    #   When I enter a new info into the bio field
-    #     And I click on "Update User"
-    #   Then the current user's bio should be updated
+      Then I should see the "Bio" input form
+      When I enter a new info into the bio field
+        And I click on "Update User" button
+      Then the current user's bio should be updated
 
 
     @poltergeist

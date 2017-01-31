@@ -9,9 +9,9 @@ Feature: Destinations Pages
     Scenario: Navigating to the destinations index page
     When I navigate to "destinations"
     Then I should see "London"
-      # And I should see the image "London.jpg"
     Then I should see "Iceland"
-      # And I should see the image "Iceland.jpg"
+      And I should see "2" images
+
 
 
     # @poltergeist

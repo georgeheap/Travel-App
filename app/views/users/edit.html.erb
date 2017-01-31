@@ -30,7 +30,7 @@
   <div class="field">
     <%= f.label :current_location %>
     <%#= f.collection_select(:current_location, 0, Destination.all, :id, :name) %>
-    <%= f.select(:current_location, @destinations.all.collect {|a| [a.name, a.id]}) %>
+    <%= f.select(:current_location, @destinations.all.collect {|a| [a.name]}) %>
   </div>
 
 
