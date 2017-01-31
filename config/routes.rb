@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :create, :new]
 
   # get 'social_media/facebook'
-
+  resources :users do
+     resources :trips, only: [:index, :show, :new, :create, :delete]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

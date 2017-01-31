@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170130094207) do
+ActiveRecord::Schema.define(version: 20170131121943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +29,15 @@ ActiveRecord::Schema.define(version: 20170130094207) do
 
   create_table "trips", force: :cascade do |t|
     t.string   "name"
-    t.integer  "destination_id_id"
-    t.integer  "user_id_id"
+    t.integer  "destination_id"
+    t.integer  "user_id"
     t.date     "from_date"
     t.date     "to_date"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["destination_id_id"], name: "index_trips_on_destination_id_id", using: :btree
-    t.index ["user_id_id"], name: "index_trips_on_user_id_id", using: :btree
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "destination"
+    t.index ["destination_id"], name: "index_trips_on_destination_id", using: :btree
+    t.index ["user_id"], name: "index_trips_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

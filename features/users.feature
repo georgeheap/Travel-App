@@ -1,4 +1,4 @@
-Feature: User can edit their profile
+Feature: Users Pages
 
   Background:
     Given sample data has been loaded
@@ -13,9 +13,13 @@ Feature: User can edit their profile
         And I click on "Update User" button
       Then the current user's bio should be updated
 
-
     @poltergeist
     Scenario: Navigating to the index page
-    When I navigate to "users"
-    Then I should see "Users"
-      And I should see "Simba"
+      When I navigate to "users"
+      Then I should see "Users"
+        And I should see "Simba"
+
+    @poltergeist
+    Scenario: A User can create a trip
+      When I navigate to users show page as "lion@king.com"
+        And I click on "Add Trip" link

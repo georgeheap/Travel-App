@@ -16,3 +16,8 @@ end
 Then(/^I should see Edit My Profile$/) do
   expect(page).to have_content('Edit My Profile')
 end
+
+When(/^I navigate to users show page as "([^"]*)"$/) do |email|
+  user = User.find_by(email: email)
+  visit "/users/#{user.id}"
+end
