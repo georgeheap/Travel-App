@@ -1,25 +1,27 @@
+<div class="main">
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <p>
+    <strong>Country from:</strong>
+    <%= @user.from_location %>
+  </p>
 
-<p>
-  <strong>Country from:</strong>
-  <%= @user.from_location %>
-</p>
+  <p>
+    <strong>Current Location:</strong>
+    <%= @user.current_location %>
+  </p>
 
-<p>
-  <strong>Current Location:</strong>
-  <%= @user.current_location %>
-</p>
+  <p>
+    <strong>Bio:</strong>
+    <%= @user.bio %>
+  </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</p>
+  <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get %>
+  <%= link_to "See all Trips", user_trips_path(:user_id => @user.id) %>
 
-<%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>

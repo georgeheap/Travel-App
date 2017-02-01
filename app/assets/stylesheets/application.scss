@@ -1,0 +1,57 @@
+@import 'colours';
+html, body {
+  overflow-x: hidden;
+  font-family: helvetica, sans-serif;
+  height: 100%;
+}
+header {
+  background-color: map-get($colours, darkblue);
+  border: none;
+  padding: 1rem;
+  .header-name {
+    padding-left: 1rem;
+    font: {
+      size: 32px;
+    }
+    font-family: sans-serif;
+  }
+  ul {
+    text-align: center;
+    margin-top: 1.4rem;
+  }
+  li {
+    text-decoration: none;
+    color: map-get($colours, white);
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-right: 2px solid map-get($colours, white);
+    &:last-child {
+      border-right: none;
+    }
+  }
+  a {
+    color: white;
+    padding: 1rem;
+    &:hover, &:focus {
+      text-decoration: none;
+      background-color: map-get($colours, black);
+      color: white;
+    }
+    &.logo {
+      padding: 0;
+    }
+  }
+}
+.main {
+    padding: 0 3rem;
+}
+
+footer {
+  color: white;
+  background-color: map-get($colours, darkblue);
+  height: 8rem;
+  position: relative;
+  p {
+    padding: 4.5rem 2rem;
+  }
+}

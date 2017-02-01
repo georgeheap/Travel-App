@@ -1,0 +1,50 @@
+@import 'colours';
+
+/*ALL SCREEN SIZES*/
+
+.home-jumbotron {
+  height: 48rem;
+  opacity: 0.8;
+  max-height: 800px;
+  img {
+    width: 100%;
+    max-height: 850px;
+  }
+}
+
+.home-jumbotron-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: map-get($colours, white);
+  p {
+    text-align: center;
+    margin-top: 1em;
+    padding: 1em;
+    // background-color: map-get($colours, red);
+    border-radius: 4px;
+  }
+  p:hover {
+    // background-color: map-get($colours, brown);
+  }
+  a {
+    // color: map-get($colours, white);
+  }
+  a:hover {
+    text-decoration: none;
+    color: map-get($colours, white);
+  }
+}
+//
+// /*ONLY PHONE AND TABLET SCREENS (MAX WIDTH 1023PX)*/
+//
+// @media screen and (max-width: 1023px) {
+//
+// }
+//
+// /*ONLY DESKTOP SCREENS (MIN WIDTH 1024PX)*/
+//
+// @media screen and (min-width: 1024px) {
+//
+// }

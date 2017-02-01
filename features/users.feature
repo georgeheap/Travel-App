@@ -23,3 +23,7 @@ Feature: Users Pages
     Scenario: A User can create a trip
       When I navigate to users show page as "lion@king.com"
         And I click on "Add Trip" link
+      Then I should see "New Trip"
+      When I enter new info into the trip fields
+        And I click on "Create Trip" button
+      Then I should see "I am a lion in London!"

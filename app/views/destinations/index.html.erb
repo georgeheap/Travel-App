@@ -1,5 +1,6 @@
-<h1>Destinations</h1>
-
-<% @destinations.each do |destination| %>
-    <%= link_to image_tag("#{destination.default_img}", alt:"#{destination.name}", class: "dest_img", id: "#{destination.name}"), destination %>
-<% end %>
+<div class="main">
+  <h1>Destinations</h1>
+  <% @destinations.each do |destination| %>
+      <%= link_to image_tag("#{destination.default_img}", alt:"#{destination.name}", class: "dest_img", id: "#{destination.name}"), destination %>
+  <% end %>
+</div>
