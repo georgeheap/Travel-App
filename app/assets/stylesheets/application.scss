@@ -15,6 +15,14 @@ header {
     }
     font-family: sans-serif;
   }
+  a {
+    color: white;
+    letter-spacing: 2px;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
   ul {
     text-align: center;
     margin-top: 1.4rem;
@@ -28,30 +36,38 @@ header {
     &:last-child {
       border-right: none;
     }
-  }
-  a {
-    color: white;
-    padding: 1rem;
-    &:hover, &:focus {
-      text-decoration: none;
-      background-color: map-get($colours, black);
+    a {
       color: white;
-    }
-    &.logo {
-      padding: 0;
+      padding: 1rem;
+      &:hover, &:focus {
+        text-decoration: none;
+        background-color: map-get($colours, black);
+        color: white;
+      }
     }
   }
 }
 .main {
-    padding: 0 3rem;
+  padding: 0 3rem;
+  margin-bottom: 9rem;
 }
-
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -8rem;
+  padding: 0 0 8rem;
+}
+.footer, .main:after {
+  height: 8rem;
+}
 footer {
   color: white;
   background-color: map-get($colours, darkblue);
   height: 8rem;
-  position: relative;
   p {
-    padding: 4.5rem 2rem;
+    float: right;
+    padding: 2rem;
   }
+  // position: relative;
 }

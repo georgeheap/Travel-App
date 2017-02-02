@@ -5,9 +5,15 @@ class DestinationsController < ApplicationController
   end
   def show
     @destination = Destination.find(params[:id])
+    @destination.update(score: (@destination.score || 0) + 1)
+    # # binding.pry
+    # @tours = Tour.where(destination_id == @destination.id)
     respond_to do |format|
       format.html {}
-      format.json {}
+      format.json {
+        @destination = Destination.find(params[:id])
+        render json: @destination
+      }
     end
   end
 

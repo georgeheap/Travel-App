@@ -11,15 +11,34 @@ module SeedData
     object.instance_exec do
       User.destroy_all
       Destination.destroy_all
+      Tour.destroy_all
 
       unless User.find_by(email: "lion@king.com")
         User.create(username: "Simba", email: "lion@king.com", password: "123456")
       end
       unless Destination.find_by(name: "London")
-        Destination.create(name: "London", default_img: "London.jpg", description: "Capital City of the UK. Filled with wonderful sites from Buckingham Palace to the British Museum.", lat: 51.505234, lng: -0.128919)
+        london = Destination.create(name: "London", default_img: "London.jpg", img1: "London-005.jpg", description: "Capital City of the UK. Filled with wonderful sites from Buckingham Palace to the British Museum.", lat: 51.505234, lng: -0.128919)
       end
       unless Destination.find_by(name: "Iceland")
-        Destination.create(name: "Iceland", default_img: "Iceland.jpg", description: "This amazing country is full of natural wonder.", lat: 64.1265, lng: 21.8174)
+        iceland = Destination.create(name: "Iceland", default_img: "Iceland.jpg", description: "This amazing country is full of natural wonder and adventure.", lat: 64.1265, lng: -21.8174)
+      end
+      unless Destination.find_by(name: "Brazil")
+        brazil = Destination.create(name: "Brazil", default_img: "Brazil.jpg", description: "This amazing country in South America with vibrant cities and amazing scenery.", lat: -22.9068, lng: -43.1729)
+      end
+      unless Destination.find_by(name: "Prague")
+        prague = Destination.create(name: "Prague", default_img: "Prague.jpg", description: "This amazing city in Eastern Europe with a charm all its own.", lat: 50.086743, lng: 14.419526)
+      end
+      unless Destination.find_by(name: "Washington DC")
+        washington = Destination.create(name: "Washington DC", default_img: "Washington.jpg", description: "Washington DC is the capital of the USA. It is filled with great museums and memorials.", lat: 38.891178, lng: -77.039417)
+      end
+      unless Destination.find_by(name: "Sydney")
+        sydney = Destination.create(name: "Sydney", default_img: "Sydney.jpg", description: "Sydney is an amazing city in Australia with so many exciting things to do.", lat: -33.857577, lng: 151.214628)
+      end
+      unless Destination.find_by(name: "Hawaii")
+        hawaii = Destination.create(name: "Hawaii", default_img: "Hawaii.jpg", description: "Kauai is one of the most beautiful of all the Hawaiian Islands.", lat: 22.104412, lng: -159.501731)
+      end
+      unless Tour.find_by(name: "Learn to Surf")
+        Tour.create(name: "Learn to Surf", default_img: "Hawaii-8.jpg", destination_id: hawaii.id, description: "Learn to surf on the amazing Island of Kauai.", lat: 22.204784, lng: -159.501112)
       end
     end
   end

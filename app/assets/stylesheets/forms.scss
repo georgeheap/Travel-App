@@ -3,26 +3,26 @@ body {
   font-size: 13px;
   line-height: 18px;
 }
-
-p, ol, ul {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
-}
-
-a {
-  color: #efefef;
-  &:visited {
-    color: #efefef;
-  }
-  &:hover {
-    color: #ffffff;
-    background-color: #000000;
-  }
-}
-
-
+//
+// p, ol, ul {
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+//   margin: 33px;
+// }
+//
+// a {
+//   color: #efefef;
+//   &:visited {
+//     color: #efefef;
+//   }
+//   &:hover {
+//     color: #ffffff;
+//     background-color: #000000;
+//   }
+// }
+//
+//
 div {
   &.field, &.actions {
     margin-bottom: 10px;

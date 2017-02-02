@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # devise :omniauthable, :omniauth_providers => [:facebook]
-  
+
 
   has_many :trips
+  has_many :tours, through: :user_tours
 
 
 end

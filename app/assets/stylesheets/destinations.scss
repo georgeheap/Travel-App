@@ -4,4 +4,24 @@
 .dest_img {
   border-radius: 5px;
   max-height: 400px;
+  max-width: 500px;
+  margin: 5px;
+}
+.show_img {
+  max-height: 300px;
+  max-width: 90%;
+}
+.extra_img {
+  max-height: 100px;
+  max-width: 200px;
+}
+.sidebar {
+  float: left;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+  background-color: grey;
+  float: right;
 }

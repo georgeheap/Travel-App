@@ -3,12 +3,12 @@
 /*ALL SCREEN SIZES*/
 
 .home-jumbotron {
-  height: 48rem;
-  opacity: 0.8;
-  max-height: 800px;
+  height: 80rem;
+  // opacity: 0.8;
+
   img {
     width: 100%;
-    max-height: 850px;
+    max-height: 80rem;
   }
 }
 
@@ -22,18 +22,58 @@
     text-align: center;
     margin-top: 1em;
     padding: 1em;
-    // background-color: map-get($colours, red);
+    background-color: map-get($colours, darkblue);
+    background: -moz-linear-gradient(top, rgba(140,153,236,1) 0%, rgba(66,89,222,1) 19%, rgba(0,0,139,1) 50%, rgba(39,66,217,1) 83%, rgba(83,104,225,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(140,153,236,1) 0%,rgba(66,89,222,1) 19%,rgba(0,0,139,1) 50%,rgba(39,66,217,1) 83%,rgba(83,104,225,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(140,153,236,1) 0%,rgba(66,89,222,1) 19%,rgba(0,0,139,1) 50%,rgba(39,66,217,1) 83%,rgba(83,104,225,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     border-radius: 4px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
   }
   p:hover {
-    // background-color: map-get($colours, brown);
+    background-color: map-get($colours, darkblue);
+    background: -moz-linear-gradient(top, rgba(161,171,239,1) 0%, rgba(100,119,228,1) 19%, rgba(0,0,206,1) 50%, rgba(78,100,224,1) 83%, rgba(114,131,230,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(161,171,239,1) 0%,rgba(100,119,228,1) 19%,rgba(0,0,206,1) 50%,rgba(78,100,224,1) 83%,rgba(114,131,230,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(161,171,239,1) 0%,rgba(100,119,228,1) 19%,rgba(0,0,206,1) 50%,rgba(78,100,224,1) 83%,rgba(114,131,230,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
   a {
-    // color: map-get($colours, white);
+    color: map-get($colours, white);
   }
   a:hover {
     text-decoration: none;
     color: map-get($colours, white);
+  }
+}
+.feat {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin: 3rem auto;
+  padding: 1rem auto;
+  text-decoration: underline overline;
+}
+.home-featured-destinations {
+  margin-bottom: 2rem;
+  .feature-dest {
+    min-height: 300px;
+  }
+  .destinations {
+    border: 3px solid black;
+    padding: 2rem;
+    height: 100%;
+    min-width: 350px;
+    background-color: #F9FFFF;
+    box-shadow: 3px 6px 5px 0px rgba(51,51,51,0.75);
+  }
+  img {
+    max-width: 300px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  h2, p {
+    text-align: center;
   }
 }
 //

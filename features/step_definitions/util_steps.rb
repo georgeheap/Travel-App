@@ -35,3 +35,7 @@ end
 Then(/^I should see "([^"]*)" images$/) do |count|
   all("img").length.should == count.to_i
 end
+
+Given /^I wait for (\d+) seconds?$/ do |n|
+  sleep(n.to_i)
+end

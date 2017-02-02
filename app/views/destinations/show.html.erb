@@ -1,24 +1,42 @@
 <div class="main">
-  <p>
-    <strong>Name:</strong>
-    <%= @destination.name %>
-  </p>
+  <div class="col-md-4">
+    <div class="sidebar">
+      <%= image_tag("#{@destination.default_img}", alt:"#{@destination.name}", class: "show_img", ) %>
+      <% if !@destination.img1.blank? %>
+        <%= image_tag("#{@destination.img1}", alt:"#{@destination.name}", class: "extra_img", ) %>
+      <% end %>
+      <% if !@destination.img2.blank? %>
+        <%= image_tag("#{@destination.img2}", alt:"#{@destination.name}", class: "extra_img", ) %>
+      <% end %>
+      <p>
+        <%= @destination.description %>
+      </p>
+      <%= link_to 'Back', destinations_path %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div id="map"></div>
+  </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @destination.description %>
-  </p>
+  <script>
+    function initMap() {
+      mapDiv = $('#map');
+      var lat = '<%=@destination.lat%>';
+      var lng = '<%=@destination.lng%>';
 
-  <p>
-    <strong>Latitude:</strong>
-    <%= @destination.lat %>
-  </p>
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        // center: center
+        center: new google.maps.LatLng(lat,lng),
+      });
 
-  <p>
-    <strong>Longitude:</strong>
-    <%= @destination.lng %>
-  </p>
-
-
-  <%= link_to 'Back', destinations_path %>
-<div>
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lat,lng),
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv5nUaJwXmq6HLHClQsQdeeDGS7b1SZ24&callback=initMap">
+  </script>
+</div>

@@ -6,8 +6,15 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :destinations, only: [:index, :show, :edit, :update]
-  # resources :users, only: [:index, :show, :edit, :update, :create, :new]
+
+
+
+  resources :destinations, only: [:index, :show, :edit, :update] do
+    resources :tours
+  end
+
+
+
 
   # get 'social_media/facebook'
   resources :users, only: [:index, :show, :edit, :update, :create, :new] do

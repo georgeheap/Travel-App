@@ -4,7 +4,15 @@
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/destination.rb": [
         1,
         1,
+        1,
         null,
+        null
+      ],
+      "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/tour.rb": [
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/controllers/application_controller.rb": [
@@ -19,6 +27,7 @@
         1,
         null,
         1,
+        6,
         null,
         null
       ],
@@ -31,8 +40,7 @@
         1,
         1,
         1,
-        1,
-        1,
+        null,
         null,
         null,
         null,
@@ -47,10 +55,10 @@
         1,
         null,
         1,
-        2,
-        2,
-        2,
-        2,
+        3,
+        3,
+        3,
+        3,
         null,
         null,
         1,
@@ -62,9 +70,6 @@
         1,
         1,
         1,
-        null,
-        0,
-        null,
         null,
         null,
         1,
@@ -81,8 +86,8 @@
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/controllers/trips_controller.rb": [
         1,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         0,
         null,
@@ -115,6 +120,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/channels/application_cable/channel.rb": [
@@ -124,6 +130,18 @@
         0
       ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/controllers/tours_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -157,9 +175,17 @@
         0,
         0,
         0,
+        0,
+        0
+      ],
+      "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/user_tour.rb": [
+        0,
+        0,
+        0,
+        0,
         0
       ]
     },
-    "timestamp": 1485952706
+    "timestamp": 1486069681
   }
 }
