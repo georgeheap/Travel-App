@@ -10,7 +10,7 @@ Feature: Destinations Pages
       When I navigate to "destinations"
       Then I should see "London"
       Then I should see "Iceland"
-        And I should see "7" images
+        And I should see "9" images
 
     # @wip
     @poltergeist

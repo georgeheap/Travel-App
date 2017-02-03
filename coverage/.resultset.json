@@ -6,6 +6,9 @@
         1,
         1,
         null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/tour.rb": [
@@ -40,6 +43,13 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
         null,
         null,
         null,
@@ -162,7 +172,32 @@
         0,
         0
       ],
+      "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/image_uploader.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/user.rb": [
+        0,
+        0,
         0,
         0,
         0,
@@ -186,6 +221,6 @@
         0
       ]
     },
-    "timestamp": 1486069681
+    "timestamp": 1486145278
   }
 }
