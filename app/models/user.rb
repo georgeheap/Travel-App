@@ -1,3 +1,4 @@
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,5 +11,6 @@ class User < ApplicationRecord
   has_many :trips
   has_many :tours, through: :user_tours
 
+  include ImageUploader[:image] # adds an `image` virtual attribute
 
 end

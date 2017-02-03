@@ -7,21 +7,47 @@
   max-width: 500px;
   margin: 5px;
 }
-.show_img {
+.destination {
+  margin-left: auto;
+  margin-right: auto;
+}
+.large_img {
   max-height: 300px;
-  max-width: 90%;
+}
+#thumbs {
+  padding-top: 10px;
+  overflow: hidden;
+}
+#thumbs img, #largeImage {
+   border: 1px solid gray;
+   padding: 4px;
+   background-color: white;
+   cursor: pointer;
+}
+#thumbs img {
+   float: left;
+   margin-right: 6px;
+}
+#panel {
+    position: relative;
 }
 .extra_img {
-  max-height: 100px;
-  max-width: 200px;
+  height: 95px;
+  max-width: 140px;
+
 }
 .sidebar {
-  float: left;
+  // float: left;
+  height: 100%;
+}
+.map {
+  height: 100%;
 }
 
 #map {
   width: 100%;
   height: 600px;
   background-color: grey;
-  float: right;
+  // float: right;
+  margin-bottom: 3rem;
 }

@@ -1,31 +1,43 @@
 <div class="main">
+  <h1 class="dest_show">Welcome to <%= @destination.name %>!</h1>
   <div class="col-md-4">
     <div class="sidebar">
-      <%= image_tag("#{@destination.default_img}", alt:"#{@destination.name}", class: "show_img", ) %>
-      <% if !@destination.img1.blank? %>
-        <%= image_tag("#{@destination.img1}", alt:"#{@destination.name}", class: "extra_img", ) %>
-      <% end %>
-      <% if !@destination.img2.blank? %>
-        <%= image_tag("#{@destination.img2}", alt:"#{@destination.name}", class: "extra_img", ) %>
-      <% end %>
+      <div id="gallery">
+        <div id="panel">
+          <%= image_tag("#{@destination.default_img}", alt:"#{@destination.name}", class: "large_img", id: "largeImage") %>
+        </div>
+        <div id="thumbs">
+          <%= image_tag("#{@destination.default_img}", alt:"#{@destination.name}", class: "extra_img") %>
+          <% if !@destination.img1.blank? %>
+            <%= image_tag("#{@destination.img1}", alt:"#{@destination.name}", class: "extra_img") %>
+          <% end %>
+          <% if !@destination.img2.blank? %>
+            <%= image_tag("#{@destination.img2}", alt:"#{@destination.name}", class: "extra_img") %>
+          <% end %>
+        </div>
+      </div>
+
       <p>
         <%= @destination.description %>
       </p>
       <%= link_to 'Back', destinations_path %>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 map">
     <div id="map"></div>
   </div>
-
   <script>
+    $('#thumbs img').click(function(){
+      $('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
+      $('#description').html($(this).attr('alt'));
+    });
     function initMap() {
       mapDiv = $('#map');
       var lat = '<%=@destination.lat%>';
       var lng = '<%=@destination.lng%>';
 
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6,
+        zoom: 7,
         // center: center
         center: new google.maps.LatLng(lat,lng),
       });
@@ -37,6 +49,7 @@
     }
   </script>
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv5nUaJwXmq6HLHClQsQdeeDGS7b1SZ24&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?v=3.25&key=AIzaSyBv5nUaJwXmq6HLHClQsQdeeDGS7b1SZ24&callback=initMap">
   </script>
 </div>
+<div class="push"></div>

@@ -1,27 +1,44 @@
 <div class="main">
-  <p>
-    <strong>Username:</strong>
-    <%= @user.username %>
-  </p>
+  <div class="row">
+    <div class="col-md-2 col-sm-6 col-xs-12 user_img">
+      <% if @user.image_data %>
+        <%= image_tag @user.image_url %>
+      <% end %>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 user">
+      <p>
+        <strong>Username:</strong>
+        <%= @user.username %>
+      </p>
 
-  <p>
-    <strong>Country from:</strong>
-    <%= @user.from_location %>
-  </p>
+      <p>
+        <strong>Country from:</strong>
+        <%= @user.from_location %>
+      </p>
 
-  <p>
-    <strong>Current Location:</strong>
-    <%= @user.current_location %>
-  </p>
+      <p>
+        <strong>Current Location:</strong>
+        <%= @user.current_location %>
+      </p>
 
-  <p>
-    <strong>Bio:</strong>
-    <%= @user.bio %>
-  </p>
+      <p>
+        <strong>Bio:</strong>
+        <%= @user.bio %>
+      </p>
+    </div>
+    <div class=" col-md-6 my_trips">
+      This is where the trips will be
+    </div>
+  </div>
+  <div class="options">
+    <% if current_user %>
+      <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get %><br/>
+      <%= link_to "See all Trips", user_trips_path(:user_id => @user.id) %><br/>
 
-  <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get %>
-  <%= link_to "See all Trips", user_trips_path(:user_id => @user.id) %>
-
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path %>
+      <%= link_to 'Edit', edit_user_path(@user) %><br/>
+      <%= link_to 'All Users', users_path %><br/>
+    <% else %>
+      Message
+    <% end %>
+  </div>
 </div>
