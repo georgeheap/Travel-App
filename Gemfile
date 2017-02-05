@@ -41,7 +41,7 @@ gem 'figaro'
 gem 'geocoder'
 gem 'will_paginate'
 gem "shrine"
-# gem "aws-sdk"
+gem "aws-sdk"
 # gem 'image_processing'
 # gem 'mini_magick'
 # gem 'fastimage'              # for store_dimensions plugin
