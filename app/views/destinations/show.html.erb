@@ -27,6 +27,7 @@
     <div id="map"></div>
   </div>
   <script>
+    // var path = window.location.pathname;
     $('#thumbs img').click(function(){
       $('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
       $('#description').html($(this).attr('alt'));

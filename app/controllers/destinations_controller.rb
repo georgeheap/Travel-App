@@ -11,7 +11,6 @@ class DestinationsController < ApplicationController
     respond_to do |format|
       format.html {}
       format.json {
-        @destination = Destination.find(params[:id])
         render json: @destination
       }
     end

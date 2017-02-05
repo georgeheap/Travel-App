@@ -3,17 +3,18 @@
 /*ALL SCREEN SIZES*/
 
 .home-jumbotron {
-  height: 80rem;
+  height: 75rem;
   // opacity: 0.8;
 
   img {
     width: 100%;
-    max-height: 80rem;
+    max-height: 75rem;
   }
 }
 
 .home-jumbotron-text {
   position: absolute;
+  text-shadow: black 0.2em 0.2em 0.2em;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
