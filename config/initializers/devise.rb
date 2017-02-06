@@ -26,6 +26,8 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
+  config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -271,7 +273,6 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  # config.omniauth :facebook, "APP_ID", "APP_SECRET",
-  #               callback_url: "CALLBACK_URL"
+
 
 end

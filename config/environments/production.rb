@@ -86,4 +86,5 @@ Rails.application.configure do
 
   config.action_cable.allowed_request_origins = "travellingbuddy.herokuapp.com"
 
+
 end

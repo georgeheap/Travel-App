@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 gem 'figaro'
 gem 'geocoder'
 gem 'will_paginate'
@@ -45,7 +45,7 @@ gem "aws-sdk"
 # gem 'image_processing'
 # gem 'mini_magick'
 # gem 'fastimage'              # for store_dimensions plugin
-gem 'roda'                   # for direct_upload plugin
+# gem 'roda'                   # for direct_upload plugin
 # gem 'sucker_punch'
 
 group :development, :test do
