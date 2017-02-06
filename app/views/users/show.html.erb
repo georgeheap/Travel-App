@@ -27,7 +27,19 @@
       </p>
     </div>
     <div class=" col-md-6 my_trips">
-      This is where the trips will be
+      <h2>My Trips</h2>
+      <% @trips.each do |trip| %>
+        <% next if trip.to_date.past? %>
+          <%= trip.name %> <br/>
+          <%= image_tag trip.destination.default_img, class: "extra_img" %>
+          <%= trip.destination.name %> <br/>
+
+          <%= trip.from_date %> <br/>
+          <%= trip.to_date %> <br/>
+          <%= link_to 'Show', user_trip_path(current_user.id, trip) %><br/>
+        <hr>
+      <% end %>
+
     </div>
   </div>
   <div class="options">

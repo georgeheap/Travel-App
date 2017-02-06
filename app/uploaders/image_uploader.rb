@@ -2,7 +2,7 @@ class ImageUploader < Shrine
   # include ImageProcessing::MiniMagick
   #
 
-  plugin :direct_upload
+  # plugin :direct_upload
   # plugin :determine_mime_type
   # plugin :remove_attachment
   # plugin :store_dimensions
