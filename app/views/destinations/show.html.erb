@@ -29,53 +29,24 @@
   <h3>Featured Tours</h3>
   <div class="tours_list">
     <% @tours.each do |tour| %>
-    <%= image_tag tour.default_img, class: "extra_img" %>
-      <%= tour.name %> <br/>
-      <%= tour.description %> <br/>
-      <%#= link_to 'Show', user_tour_path(current_user.id, trip) %><br/>
+      <%= link_to destination_tour_path(@destination, tour) do %>
+        <%= image_tag tour.default_img, class: "extra_img" %>
+        <%= tour.name %> <br/>
+        <%= tour.description %> <br/>
+      <% end %>
       <hr>
     <% end %>
   </div>
   <script>
-    var path = window.location.pathname;
-    $('#thumbs img').click(function(){
+    $('#thumbs img').click(function () {
       $('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
       $('#description').html($(this).attr('alt'));
     });
-    function initMap() {
-      mapDiv = $('#map');
-      var lat = '<%=@destination.lat%>';
-      var lng = '<%=@destination.lng%>';
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 9,
-        center: new google.maps.LatLng(lat,lng),
-      });
-
-      var locMarker = new google.maps.Marker({
-        position: new google.maps.LatLng(lat,lng),
-        map: map
-      });
-      tourMarker(map);
-
-
-
-    }
-    function tourMarker(map) {
-      $.get(path + '.json', function (results) {
-        for (var i = 0; i < results.tours.length; i++) {
-          var tour = results.tours[i];
-          var latLng = new google.maps.LatLng(tour.lat,tour.lng);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-      });
-    }
   </script>
+  <%= javascript_include_tag "map.js"%>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?v=3.25&key=AIzaSyBv5nUaJwXmq6HLHClQsQdeeDGS7b1SZ24&callback=initMap">
   </script>
+
 </div>
 <div class="push"></div>

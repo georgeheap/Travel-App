@@ -7,12 +7,12 @@ Feature: Tours Pages
 
     @poltergeist
     Scenario: Navigating to the tours index page
-      When I navigate to "tours"
-      Then I should see "Tours"
+      When I navigate to destination show page "Hawaii"
+      Then I should see "Featured Tours"
+        And I should see "Learn to surf"
 
-    @wip
     @poltergeist
     Scenario: Navigating to tours show page
-      When I navigate to destination show page "London"
-      Then I should see "Name"
-        And I should see "Capital City of the UK"
+      When I navigate to tour show page "Learn to Surf" on "Hawaii"
+      Then I should see "Everyday"
+        And I should see "Learn to surf on the amazing Island of Kauai."

@@ -25,33 +25,34 @@
         <strong>Bio:</strong>
         <%= @user.bio %>
       </p>
+      <div class="options">
+        <% if current_user.id == @user.id %>
+          <%= link_to 'Edit', edit_user_path(@user), class: "linkbtn" %><br/>
+          <%= link_to 'All Users', users_path, class: "linkbtn" %><br/>
+        <% else %>
+          <p>Message</p>
+          <%= link_to 'All Users', users_path, class: "linkbtn" %><br/>
+        <% end %>
+      </div>
     </div>
-    <div class=" col-md-6 my_trips">
+    <div class="col-md-6 my_trips">
       <h2>My Trips</h2>
+      <% if current_user.id == @user.id %>
+        <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get, class: "linkbtn" %>
+        <%= link_to "See all Trips", user_trips_path(:user_id => @user.id), class: "linkbtn" %><br/>
+      <% end %>
       <% @trips.each do |trip| %>
         <% next if trip.to_date.past? %>
-          <%= trip.name %> <br/>
+        <%= link_to user_trip_path(current_user.id, trip) do %>
           <%= image_tag trip.destination.default_img, class: "extra_img" %>
-          <%= trip.destination.name %> <br/>
+          <%= trip.name %>
+          <%= trip.destination.name %>
 
-          <%= trip.from_date %> <br/>
-          <%= trip.to_date %> <br/>
-          <%= link_to 'Show', user_trip_path(current_user.id, trip) %><br/>
+          <%= trip.from_date %>
+          <%= trip.to_date %>
+        <% end %>
         <hr>
       <% end %>
-
     </div>
-  </div>
-  <div class="options">
-    <% if current_user.id == @user.id %>
-      <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get %><br/>
-      <%= link_to "See all Trips", user_trips_path(:user_id => @user.id) %><br/>
-
-      <%= link_to 'Edit', edit_user_path(@user) %><br/>
-      <%= link_to 'All Users', users_path %><br/>
-    <% else %>
-      <p>Message</p>
-      <%= link_to 'All Users', users_path %><br/>
-    <% end %>
   </div>
 </div>

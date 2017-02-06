@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
 
 
-
   # get 'social_media/facebook'
   resources :users, only: [:index, :show, :edit, :update, :create, :new] do
      resources :trips, only: [:index, :show, :new, :create, :delete]

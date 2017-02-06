@@ -12,11 +12,17 @@
 }
 .user {
   margin: 5rem auto 1rem;
+  border-right: 3px solid black;
+}
 
-}
-.options {
-  margin-bottom: 5rem;
-}
 .my_trips {
   margin: 3rem auto;
+  a {
+
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
 }

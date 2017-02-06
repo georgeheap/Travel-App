@@ -10,10 +10,10 @@ Feature: Users Pages
       When I navigate to users edit page as "lion@king.com"
       Then I should see Edit My Profile
       Then I should see the "Bio" input form
-      When I enter a new info into the bio field
-      
+      When I enter a new info into the fields
         And I click on "Update User" button
       Then the current user's bio should be updated
+        # And I should see image
 
     # @wip
     @poltergeist

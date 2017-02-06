@@ -1,0 +1,19 @@
+<div class="main">
+    <h2 class="page_heading"><%= @tour.name %></h2>
+    <div class="col-md-4">
+      <%= image_tag @tour.default_img, class: "large_img" %>
+      <p><%= @tour.description %></p>
+      <p>Runs: <%= @tour.day_of_week %></p>
+      <p>Add to Trip: </p>
+
+    </div>
+    <div class="col-md-8 map">
+      <div id="map"></div>
+    </div>
+
+</div>
+
+<%= javascript_include_tag "map.js"%>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?v=3.25&key=AIzaSyBv5nUaJwXmq6HLHClQsQdeeDGS7b1SZ24&callback=initMap">
+</script>

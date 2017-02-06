@@ -30,7 +30,7 @@
         1,
         null,
         1,
-        6,
+        7,
         null,
         null
       ],
@@ -41,16 +41,32 @@
         1,
         null,
         1,
-        1,
+        4,
+        4,
+        null,
+        4,
+        4,
+        4,
+        4,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/controllers/tours_controller.rb": [
         1,
         null,
         1,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
         null,
         null,
         null,
@@ -139,19 +155,6 @@
         0,
         0
       ],
-      "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/controllers/tours_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/user.rb": [
         0,
         0,
@@ -184,6 +187,6 @@
         0
       ]
     },
-    "timestamp": 1486391577
+    "timestamp": 1486416391
   }
 }
