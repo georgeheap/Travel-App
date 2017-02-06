@@ -45,7 +45,7 @@ gem "aws-sdk"
 # gem 'image_processing'
 # gem 'mini_magick'
 # gem 'fastimage'              # for store_dimensions plugin
-# gem 'roda'                   # for direct_upload plugin
+gem 'roda'                   # for direct_upload plugin
 # gem 'sucker_punch'
 
 group :development, :test do

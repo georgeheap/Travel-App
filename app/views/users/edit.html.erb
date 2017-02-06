@@ -37,9 +37,13 @@
       <%= f.label :bio %>
       <%= f.text_field :bio %>
     </div>
-
-    <%= f.hidden_field :image, value: @user.cached_image_data %>
-    <%= f.file_field :image %>
+    <div class="field">
+      <% if f.object.image.present? %>
+        <%= image_tag f.object.image_url %>
+      <% end %>
+      <%= f.hidden_field :image, value: f.object.cached_image_data %>
+      <%= f.file_field :image %>
+    </div>
 
     <div class="actions">
       <%= f.submit %>
