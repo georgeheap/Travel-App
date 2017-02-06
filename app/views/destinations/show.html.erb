@@ -26,8 +26,18 @@
   <div class="col-md-8 map">
     <div id="map"></div>
   </div>
+  <h3>Featured Tours</h3>
+  <div class="tours_list">
+    <% @tours.each do |tour| %>
+    <%= image_tag tour.default_img, class: "extra_img" %>
+      <%= tour.name %> <br/>
+      <%= tour.description %> <br/>
+      <%#= link_to 'Show', user_tour_path(current_user.id, trip) %><br/>
+      <hr>
+    <% end %>
+  </div>
   <script>
-    // var path = window.location.pathname;
+    var path = window.location.pathname;
     $('#thumbs img').click(function(){
       $('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
       $('#description').html($(this).attr('alt'));
@@ -38,14 +48,29 @@
       var lng = '<%=@destination.lng%>';
 
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
-        // center: center
+        zoom: 9,
         center: new google.maps.LatLng(lat,lng),
       });
 
-      var marker = new google.maps.Marker({
+      var locMarker = new google.maps.Marker({
         position: new google.maps.LatLng(lat,lng),
         map: map
+      });
+      tourMarker(map);
+
+
+
+    }
+    function tourMarker(map) {
+      $.get(path + '.json', function (results) {
+        for (var i = 0; i < results.tours.length; i++) {
+          var tour = results.tours[i];
+          var latLng = new google.maps.LatLng(tour.lat,tour.lng);
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+        }
       });
     }
   </script>

@@ -2,8 +2,6 @@ class TripsController < ApplicationController
   def index
      if current_user
        @trips = current_user.trips
-     else
-       redirect_to user_path
      end
   end
   def new

@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # devise :omniauthable, :omniauth_providers => [:facebook]
-
+  validates_presence_of :username
+  validates_uniqueness_of :username
 
   has_many :trips
   has_many :tours, through: :user_tours

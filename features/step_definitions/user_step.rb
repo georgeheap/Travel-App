@@ -1,12 +1,3 @@
-And /^I am a new, authenticated user$/ do
-  email = 'lion@king.com'
-  password = '123456'
-
-  visit 'users/sign_in'
-  fill_in 'Email', :with => email
-  fill_in 'Password', :with => password
-  click_button "Log in"
-end
 
 When(/^I navigate to users edit page as "([^"]*)"$/) do |email|
   user = User.find_by(email: email)
@@ -37,4 +28,8 @@ When(/^I enter new info into the trip fields$/) do
   # fill_in "trip[destination_id]", with: "London"
   fill_in "trip[from_date]", with: "03/08/2017"
   fill_in "trip[to_date]", with: "18/08/2017"
+end
+
+When(/^a customer uploads an image to profile, file exists$/) do
+  page.attach_file("customer_profile_attributes_avatars_attributes_0_avatar", Rails.root + 'public/uploads/avatar/avatar/1/wolf.jpg')
 end
