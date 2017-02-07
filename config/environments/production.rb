@@ -25,6 +25,8 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
+  config.secret_key_base = '590ff05fa2c4ecc8af699d02ef141bea579cfe7d04bf4f0b7f1e00cf5d9e9f016009d8557dbf532033e18f1b465cbb2170423bd7c9de637e522a64cb8addaaf0'
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
