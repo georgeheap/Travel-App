@@ -10,14 +10,10 @@ class TripsController < ApplicationController
   end
   def show
     @trip = current_user.trips.find(params[:id])
-    respond_to do |format|
-      format.html {}
-      format.json {}
-    end
   end
   def create
-    # binding.pry
     @trip = current_user.trips.create(trip_params)
+    # binding.pry
     redirect_to user_trip_path(current_user.id, @trip.id)
   end
 

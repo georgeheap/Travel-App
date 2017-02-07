@@ -17,12 +17,10 @@
 
 .my_trips {
   margin: 3rem auto;
-  a {
+  background-color: lightgrey;
+}
 
-    &:hover {
-      text-decoration: none;
-      color: black;
-    }
-  }
-
+.trip-show {
+  background-color: lightgrey;
+  border-radius: 5px;
 }

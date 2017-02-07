@@ -35,7 +35,7 @@
                   <%= link_to "MESSAGES"%> <!-- , user_conversations_path(current_user) -->
                 </li>
               <% else %>
-                <li><%= link_to "ABOUT US" %></li>
+                <li><%= link_to "ABOUT US", about_us_path %></li>
               <% end %>
               <% if user_signed_in? %>
                 <li>

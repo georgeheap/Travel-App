@@ -64,6 +64,7 @@ SimpleCov.start 'rails' do
   add_filter "/controllers/users/"
   add_filter "/jobs/application_job.rb"
   add_filter "/models/application_record.rb"
+  add_filter "/application_cable/"
 end
 require 'cucumber/rails'
 require 'capybara/cucumber'

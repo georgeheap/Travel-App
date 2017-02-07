@@ -4,7 +4,7 @@
 
     <div class="field">
       <%= f.label :trip_name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :required => true %>
     </div>
 
     <div class="field">
@@ -14,12 +14,12 @@
 
     <div class="field">
       <%= f.label :from_date %>
-      <%= f.date_field :from_date %>
+      <%= f.date_field :from_date, id: "from", :required => true %>
     </div>
 
     <div class="field">
       <%= f.label :to_date %>
-      <%= f.date_field :to_date %>
+      <%= f.date_field :to_date, id: "to", :required => true %>
     </div>
 
     <div class="actions">
@@ -29,3 +29,17 @@
 
   <%= link_to 'Back', user_path(current_user) %>
 </div>
+<script>
+var from;
+var to;
+
+$("#to").change(function () {
+  from = $("#from").val();
+  to = $("#to").val();
+  if(Date.parse(from) > Date.parse(to)){
+     alert("Invalid Date Range");
+     $("#to").val("")
+  }
+});
+
+</script>

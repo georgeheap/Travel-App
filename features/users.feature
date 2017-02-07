@@ -36,3 +36,10 @@ Feature: Users Pages
         And I wait for 1 seconds
       Then I should see "My Trips"
       Then I should see "I am a lion in London!"
+
+      @poltergeist
+      Scenario: A User has to put an end date after start date
+        When I navigate to users show page as "lion@king.com"
+          And I click on "Add Trip" link
+        When I enter incorrect info into the trip fields
+          Then I should see "Invalid"

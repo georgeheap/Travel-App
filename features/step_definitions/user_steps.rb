@@ -35,3 +35,14 @@ end
 #   save_and_open_page
 #   find('img')['src'].include?(img_src).should be_true
 # end
+
+When(/^I navigate to home page$/) do
+  visit "/"
+end
+
+When(/^I enter incorrect info into the trip fields$/) do
+  fill_in "trip[name]", with: "I am a lion in London!"
+  select "London", :from => "trip[destination_id]"
+  fill_in "trip[from_date]", with: "18/08/2017"
+  fill_in "trip[to_date]", with: "03/08/2017"
+end
