@@ -172,6 +172,11 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/models/user_tour.rb": [
@@ -187,6 +192,6 @@
         0
       ]
     },
-    "timestamp": 1486416391
+    "timestamp": 1486482406
   }
 }

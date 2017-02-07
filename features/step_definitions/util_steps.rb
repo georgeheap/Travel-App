@@ -16,13 +16,6 @@ Then(/^I should see "([^"]*)"$/) do |text|
   expect(page.body).to match(text)
 end
 
-# Then(/^I should see the image "([^"]*)"$/) do |image|
-# #   expect(page).to have_xpath("//img[contains(@src, \"#{image}\")]")
-# #   page.should have_xpath("//img[contains(@src, \"#{image}\")]")
-#   # page.find('#dest_img')['src'].should have_content image
-#   # find('img')['src'].include?(img_src).should be_true
-# end
-
 When(/^I click on "([^"]*)" link$/) do |text|
   has_content?(text)
   click_link text
@@ -38,4 +31,9 @@ end
 
 Given /^I wait for (\d+) seconds?$/ do |n|
   sleep(n.to_i)
+end
+
+
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |css_selector, text|
+  fill_in css_selector, with: text
 end

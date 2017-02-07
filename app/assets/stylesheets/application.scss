@@ -1,15 +1,18 @@
 @import 'colours';
 * {
     margin: 0;
+    a {
+      text-decoration: none !important;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
 }
 html, body {
   overflow-x: hidden;
   font-family: helvetica, sans-serif;
   height: 100%;
   min-height: 100%;
-  a:hover {
-    text-decoration: none !important;
-  }
 }
 header {
   background-color: map-get($colours, darkblue);
@@ -68,11 +71,16 @@ header {
   height: 8rem;
 }
 
-.linkbtn {
-  background-color: map-get($colours, darkblue);
+.link-btn {
+  background-color: map-get($colours, darkblue) !important;
   padding: 3px 1rem;
+  width: 150px;
 }
-
+#all-link {
+  &:hover {
+    text-decoration: none;
+  }
+}
 footer {
   color: white;
   background-color: map-get($colours, darkblue);

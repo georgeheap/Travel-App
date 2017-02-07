@@ -16,6 +16,9 @@ module SeedData
       unless User.find_by(email: "lion@king.com")
         User.create(username: "Simba", email: "lion@king.com", password: "123456")
       end
+      unless User.find_by(email: "loki@asgard.com")
+        User.create(username: "Loki", email: "loki@asgard.com", password: "123456")
+      end
       unless Destination.find_by(name: "London")
         london = Destination.create(name: "London", default_img: "London.jpg", img1: "London-005.jpg", img2: "London-004.jpg", description: "Capital City of the UK. Filled with wonderful sites from Buckingham Palace to the British Museum.", lat: 51.505234, lng: -0.128919)
       end

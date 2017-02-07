@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   # get 'social_media/facebook'
   resources :users, only: [:index, :show, :edit, :update, :create, :new] do
      resources :trips, only: [:index, :show, :new, :create, :delete]
+    #  resources :conversations, only: [:index]
+    #  resources :messages, only: [:index, :create, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -27,32 +27,42 @@
       </p>
       <div class="options">
         <% if current_user.id == @user.id %>
-          <%= link_to 'Edit', edit_user_path(@user), class: "linkbtn" %><br/>
-          <%= link_to 'All Users', users_path, class: "linkbtn" %><br/>
+          <div class="link-btn"><%= link_to 'Edit', edit_user_path(@user)%></div>
+          <div class="link-btn"><%= link_to 'All Users', users_path%></div>
         <% else %>
           <p>Message</p>
-          <%= link_to 'All Users', users_path, class: "linkbtn" %><br/>
+          <%#= link_to "Send message", user_conversations_path(current_user), id: "open-message-modal-button" %>
+          <!-- <div id="message-modal">
+            <input type="textarea" id="modal-message-text-area" />
+            <input type="submit" id="send-message-button" value="Send" />
+          </div> -->
+          <div class="link-btn"><%= link_to 'All Users', users_path%></div>
         <% end %>
       </div>
     </div>
+
+
     <div class="col-md-6 my_trips">
       <h2>My Trips</h2>
       <% if current_user.id == @user.id %>
-        <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get, class: "linkbtn" %>
-        <%= link_to "See all Trips", user_trips_path(:user_id => @user.id), class: "linkbtn" %><br/>
+        <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get%>
+        <%= link_to "See all Trips", user_trips_path(:user_id => @user.id)%><br/>
       <% end %>
       <% @trips.each do |trip| %>
         <% next if trip.to_date.past? %>
-        <%= link_to user_trip_path(current_user.id, trip) do %>
-          <%= image_tag trip.destination.default_img, class: "extra_img" %>
-          <%= trip.name %>
-          <%= trip.destination.name %>
+        <div class="link-btn">
+          <%= link_to user_trip_path(current_user.id, trip), id: "all-link" do %>
+            <%= image_tag trip.destination.default_img, class: "extra_img" %>
+            <%= trip.name %>
+            <%= trip.destination.name %>
 
-          <%= trip.from_date %>
-          <%= trip.to_date %>
-        <% end %>
+            <%= trip.from_date %>
+            <%= trip.to_date %>
+          <% end %>
+        </div>
         <hr>
       <% end %>
     </div>
   </div>
 </div>
+<%#= javascript_include_tag "messages.js"%>
