@@ -1,15 +1,17 @@
 @import 'colours';
 * {
     margin: 0;
-}
-a:hover, a:focus {
-  text-decoration: none;
+
 }
 html, body {
   overflow-x: hidden;
   font-family: helvetica, sans-serif;
   height: 100%;
   min-height: 100%;
+  a:hover {
+    text-decoration: none;
+  }
+
 }
 header {
   background-color: map-get($colours, darkblue);
