@@ -14,7 +14,7 @@ module SeedData
       Tour.destroy_all
 
       unless User.find_by(email: "lion@king.com")
-        User.create(username: "Simba", email: "lion@king.com", password: "123456")
+        User.create(username: "Simba", email: "lion@king.com", password: "123456", is_provider: true)
       end
       unless User.find_by(email: "loki@asgard.com")
         User.create(username: "Loki", email: "loki@asgard.com", password: "123456")
@@ -47,13 +47,13 @@ module SeedData
         hawaii = Destination.create(name: "Hawaii", default_img: "Hawaii.jpg", img1: "Hawaii-2.jpg", img2: "Hawaii-15.jpg", description: "Kauai is one of the most beautiful of all the Hawaiian Islands.", lat: 22.104412, lng: -159.501731)
       end
       unless Tour.find_by(name: "Learn to Surf")
-        Tour.create(name: "Learn to Surf", default_img: "Hawaii-8.jpg", destination_id: hawaii.id, description: "Learn to surf on the amazing Island of Kauai.", day_of_week: "Everyday", lat: 22.204784, lng: -159.501112)
+        Tour.create(name: "Learn to Surf", destination_id: hawaii.id, description: "Learn to surf on the amazing Island of Kauai.", day_of_week: "Everyday", lat: 22.204784, lng: -159.501112)
       end
       unless Tour.find_by(name: "Dolphin Cruise")
-        Tour.create(name: "Dolphin Cruise", default_img: "Hawaii-11.jpg", destination_id: hawaii.id, description: "Go on a boat trip to see wild dolphins.", day_of_week: "Everyday", lat: 21.901565, lng: -159.588034)
+        Tour.create(name: "Dolphin Cruise", destination_id: hawaii.id, description: "Go on a boat trip to see wild dolphins.", day_of_week: "Everyday", lat: 21.901565, lng: -159.588034)
       end
       unless Tour.find_by(name: "Icelandic Horse Riding")
-        Tour.create(name: "Icelandic Horse Riding", default_img: "Iceland-001.jpg", destination_id: iceland.id, description: "Ride Icelandic Horses through the beautiful Icelandic countryside.", day_of_week: "Everyday", lat: 64.141331, lng: -21.847310)
+        Tour.create(name: "Icelandic Horse Riding", destination_id: iceland.id, description: "Ride Icelandic Horses through the beautiful Icelandic countryside.", day_of_week: "Everyday", lat: 64.141331, lng: -21.847310)
       end
     end
   end

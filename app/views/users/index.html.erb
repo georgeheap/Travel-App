@@ -2,12 +2,14 @@
   <h1>Users</h1>
 
   <% @users.each do |user| %>
-
-    <%= user.username %> -
-    <%= user.from_location %> -
-    <%= user.current_location %> -
-    <%= user.bio %> -
-    <div class="link-btn"> <%= link_to 'Show', user, class: "btn"  %></div>
-
+    <div class="user">
+      <% if !user.image_url.nil? %>
+        <%= image_tag user.image_url, class: "thumb-img" %>
+      <% end %>
+      <%= user.username %> -
+      <%= user.from_location %> -
+      <%= user.current_location %>
+      <%= link_to 'Show', user, class: "link-btn" %><br/>
+    </div>
   <% end %>
 </div>

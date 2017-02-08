@@ -70,10 +70,19 @@ header {
   height: 8rem;
 }
 
+
 .link-btn {
-  background-color: map-get($colours, darkblue) !important;
+  background-color: #C0C0C0;
+  border-radius: 5px;
+  border: 1px solid grey;
   padding: 3px 1rem;
-  width: 150px;
+  min-width: 170px;
+  text-align: center;
+  color: white;
+  &:hover {
+    background-color: gray;
+    color: white;
+  }
 }
 #all-link {
   &:hover {

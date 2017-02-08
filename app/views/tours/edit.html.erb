@@ -1,0 +1,49 @@
+<div class="main">
+  <h1>Edit Tour</h1>
+  <%= form_for(@tour, url: { action: "update" }) do |f| %>
+
+    <div class="field">
+      <%= f.label :tour_name %>
+      <%= f.text_field :name, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :tour_type %>
+      <%= f.select :tour_type, ['Active', 'Animals', 'Photography', 'Sightseeing', 'Day Trip', 'Walking'], :required => true %>
+    </div>
+    <%= f.hidden_field :destination_id, value: @destination.id %>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_of_week %>
+      <%= f.text_field :day_of_week, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :lat %>
+      <%= f.text_field :lat, :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :lng %>
+      <%= f.text_field :lng, :required => true %>
+    </div>
+    <% if @tour.image.present? %>
+      <%= image_tag @tour.image_url, class: "extra_img" %>
+    <% end %>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.hidden_field :image, value: @tour.cached_image_data %>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back', destination_tour_path(:destination_id, @tour) %>
+</div>

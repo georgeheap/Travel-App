@@ -74,5 +74,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem 'tsuite'
   gem 'rails-controller-testing'
+  gem 'rspec-rails'
   gem 'selenium-webdriver', '< 3.0'
 end

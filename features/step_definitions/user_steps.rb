@@ -46,3 +46,10 @@ When(/^I enter incorrect info into the trip fields$/) do
   fill_in "trip[from_date]", with: "18/08/2017"
   fill_in "trip[to_date]", with: "03/08/2017"
 end
+
+
+# And(/^I should see user trips$/) do
+#   user = User.find_by(email: "lion@king.com")
+#   trip = user.trips
+#   expect(user.trips).to have_content('I am a lion in London!')
+# end

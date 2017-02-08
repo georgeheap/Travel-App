@@ -1,23 +1,13 @@
 <div class="main">
-  <p>
-    <strong>Trip Name:</strong>
-    <%= @trip.name %>
-  </p>
-
-  <p>
-    <strong>Destination:</strong>
-    <%= @trip.destination.name %>
-  </p>
-
-  <p>
-    <strong>Date From:</strong>
-    <%= @trip.from_date %>
-  </p>
-
-  <p>
-    <strong>Date To:</strong>
-    <%= @trip.to_date %>
-  </p>
-
-  <%= link_to 'Back', users_path(current_user) %>
+  <div class="trip-page">
+    <%= image_tag @trip.destination.default_img, class: "large_img trip-img" %>
+    <span class="trip-info">
+      <p><strong>Trip Name:</strong> <%= @trip.name %></p>
+      <p><strong>Destination:</strong> <%= @trip.destination.name %></p>
+      <p><strong>From:</strong> <%= @trip.from_date.strftime("%d/%m/%Y") %></p>
+      <p><strong>To:</strong> <%= @trip.to_date.strftime("%d/%m/%Y") %></p>
+    </span>
+    <%= link_to 'Destination', @destination, class: "link-btn" %>
+    <%= link_to 'Back', user_path(current_user), class: "link-btn"  %>
+  </div>
 </div>

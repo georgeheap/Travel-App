@@ -20,20 +20,29 @@
       <p>
         <%= @destination.description %>
       </p>
-      <%= link_to 'Back', destinations_path %>
+      <%= link_to 'Back', destinations_path, class: "link-btn" %>
     </div>
   </div>
   <div class="col-md-8 map">
     <div id="map"></div>
   </div>
-  <h3>Featured Tours</h3>
-  <div class="tours_list">
+  <h3>Tours</h3>
+  <% if current_user && current_user.is_provider == true %>
+    <%= link_to "Create New Tour", new_destination_tour_path(destination_id: @destination.id), class: "link-btn" %>
+  <% end %>
+  <div class="tours-list">
     <% @tours.each do |tour| %>
-      <%= link_to destination_tour_path(@destination, tour) do %>
-        <%= image_tag tour.default_img, class: "extra_img" %>
-        <%= tour.name %> <br/>
-        <%= tour.description %> <br/>
-      <% end %>
+      <div class="tour-list">
+        <%= link_to destination_tour_path(@destination, tour) do %>
+          <% if !tour.image_url.nil? %>
+            <%= image_tag tour.image_url, class: "extra_img" %>
+          <% end %>
+          <div class="tour-desc">
+            <%= tour.name %> <br/>
+            <%= tour.description %> <br/>
+          </div>
+        <% end %>
+      </div>
       <hr>
     <% end %>
   </div>

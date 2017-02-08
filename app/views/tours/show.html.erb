@@ -1,11 +1,14 @@
 <div class="main">
     <h2 class="page_heading"><%= @tour.name %></h2>
     <div class="col-md-4">
-      <%= image_tag @tour.default_img, class: "large_img" %>
+      <% if !@tour.image_url.nil? %>
+        <%= image_tag @tour.image_url, class: "large_img" %>
+      <% end %>
       <p><%= @tour.description %></p>
       <p>Runs: <%= @tour.day_of_week %></p>
-      <p>Add to Trip: </p>
-
+      <!-- <p>Add to Trip: </p> -->
+      <%= link_to "Edit", edit_destination_tour_path(@tour.destination_id), class: "link-btn" %>
+      <%= link_to "Back", destination_path(@tour.destination_id), class: "link-btn" %>
     </div>
     <div class="col-md-8 map">
       <div id="map"></div>

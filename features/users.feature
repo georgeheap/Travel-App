@@ -36,6 +36,7 @@ Feature: Users Pages
         And I wait for 1 seconds
       Then I should see "My Trips"
       Then I should see "I am a lion in London!"
+        # And I should see user trips
 
       @poltergeist
       Scenario: A User has to put an end date after start date

@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
   def index
      if current_user
-       @trips = current_user.trips
+       @trips = current_user.trips.order("from_date")
+       @user = current_user
      end
   end
   def new
@@ -10,6 +11,7 @@ class TripsController < ApplicationController
   end
   def show
     @trip = current_user.trips.find(params[:id])
+    @destination = @trip.destination
   end
   def create
     @trip = current_user.trips.create(trip_params)

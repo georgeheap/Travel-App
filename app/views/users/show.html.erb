@@ -1,10 +1,10 @@
-
-
 <div class="main">
   <div class="row">
     <div class="col-md-2 col-sm-6 col-xs-12 user_img">
       <% if @user.image_data %>
         <%= image_tag @user.image_url %>
+      <% else %>
+        <img src="/assets/Portrait_placeholder.png" alt="Profile image placeholder" />
       <% end %>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12 user">
@@ -29,8 +29,7 @@
       </p>
       <div class="options">
         <% if current_user.id == @user.id %>
-          <div class="link-btn"><%= link_to 'Edit', edit_user_path(@user)%></div>
-          <div class="link-btn"><%= link_to 'All Users', users_path%></div>
+          <%= link_to 'Edit', edit_user_path(@user), class: "link-btn"%>
         <% else %>
           <p>Message</p>
           <%#= link_to "Send message", user_conversations_path(current_user), id: "open-message-modal-button" %>
@@ -38,8 +37,8 @@
             <input type="textarea" id="modal-message-text-area" />
             <input type="submit" id="send-message-button" value="Send" />
           </div> -->
-          <div class="link-btn"><%= link_to 'All Users', users_path%></div>
         <% end %>
+        <%= link_to 'All Users', users_path, class: "link-btn"%>
       </div>
     </div>
 
@@ -47,8 +46,8 @@
     <div class="col-md-6 my_trips">
       <h2>My Trips</h2>
       <% if current_user.id == @user.id %>
-        <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get%>
-        <%= link_to "See all Trips", user_trips_path(:user_id => @user.id)%><br/>
+        <%= link_to "Add Trip", new_user_trip_path(:user_id => @user.id), method: :get, class: "link-btn" %>
+        <%= link_to "See all Trips", user_trips_path(:user_id => @user.id), class: "link-btn" %><br/>
       <% end %>
       <% @trips.each do |trip| %>
         <% next if trip.to_date.past? %>
