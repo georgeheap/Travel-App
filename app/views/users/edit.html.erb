@@ -4,11 +4,6 @@
   <%= form_for(@user) do |f| %>
 
     <div class="field">
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-    </div>
-
-    <div class="field">
       <%= f.label :from_location %>
       <%= f.select :from_location, [ "-", "Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua And Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas",
         "Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia And Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory","Brunei Darussalam","Bulgaria",
@@ -30,7 +25,6 @@
 
     <div class="field">
       <%= f.label :current_location %>
-      <%#= f.collection_select(:current_location, 0, Destination.all, :id, :name) %>
       <%= f.select(:current_location, @destinations.all.collect {|a| [a.name]}) %>
     </div>
     <div class="field">
@@ -45,7 +39,10 @@
       <%= f.hidden_field :image, value: @user.cached_image_data %>
       <%= f.file_field :image %>
     </div>
-
+    <div class="field">
+      <%= f.label :tour_provider %>
+      <%= f.check_box :is_provider%>
+    </div>
     <div class="actions">
       <%= f.submit %>
     </div>

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def user_params
     unless params[:is_admin]
-      params.require(:user).permit(:username, :password, :email, :from_location, :current_location, :bio, :image)
+      params.require(:user).permit(:username, :password, :email, :from_location, :current_location, :bio, :image, :is_provider)
     else
 
     end
