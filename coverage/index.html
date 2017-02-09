@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-02-08T20:31:12+00:00">2017-02-08T20:31:12+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-02-09T16:33:08+00:00">2017-02-09T16:33:08+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">76.27%</span></span>
+    (<span class="covered_percent"><span class="yellow">80.36%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.57
+         1.66
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>12</b> files in total.
-    <b>118</b> relevant lines. 
+    <b>11</b> files in total.
+    <b>112</b> relevant lines. 
     <span class="green"><b>90</b> lines covered</span> and
-    <span class="red"><b>28</b> lines missed </span>
+    <span class="red"><b>22</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -132,12 +132,12 @@
       
       <tr>
         <td class="strong"><a href="#8bbad39741518c86acb038ee688b3b4850c44da8" class="src_link" title="app/models/trip.rb">app/models/trip.rb</a></td>
-        <td class="yellow strong">87.5 %</td>
+        <td class="green strong">100.0 %</td>
         <td>14</td>
-        <td>8</td>
         <td>7</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td>7</td>
+        <td>0</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -147,16 +147,6 @@
         <td>19</td>
         <td>0</td>
         <td>19</td>
-        <td>0.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#c85edb2ac5e9b3419196abdc384e0ed9b660ae33" class="src_link" title="app/models/user_tour.rb">app/models/user_tour.rb</a></td>
-        <td class="red strong">0.0 %</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>5</td>
         <td>0.0</td>
       </tr>
       
@@ -276,20 +266,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">37.5%</span></span>
+    (<span class="covered_percent"><span class="red">44.12%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.38
+         0.46
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
-    <b>5</b> files in total.
-    <b>40</b> relevant lines. 
+    <b>4</b> files in total.
+    <b>34</b> relevant lines. 
     <span class="green"><b>15</b> lines covered</span> and
-    <span class="red"><b>25</b> lines missed </span>
+    <span class="red"><b>19</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -327,12 +317,12 @@
       
       <tr>
         <td class="strong"><a href="#8bbad39741518c86acb038ee688b3b4850c44da8" class="src_link" title="app/models/trip.rb">app/models/trip.rb</a></td>
-        <td class="yellow strong">87.5 %</td>
+        <td class="green strong">100.0 %</td>
         <td>14</td>
-        <td>8</td>
         <td>7</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td>7</td>
+        <td>0</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -342,16 +332,6 @@
         <td>19</td>
         <td>0</td>
         <td>19</td>
-        <td>0.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#c85edb2ac5e9b3419196abdc384e0ed9b660ae33" class="src_link" title="app/models/user_tour.rb">app/models/user_tour.rb</a></td>
-        <td class="red strong">0.0 %</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>5</td>
         <td>0.0</td>
       </tr>
       
@@ -1428,7 +1408,7 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">      params.require(:user).permit(:username, :password, :email, :from_location, :current_location, :bio, :image)</code>
+          <code class="ruby">      params.require(:user).permit(:username, :password, :email, :from_location, :current_location, :bio, :image, :is_provider)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
@@ -1600,11 +1580,11 @@
         <div class="source_table" id="8bbad39741518c86acb038ee688b3b4850c44da8">
   <div class="header">
     <h3>app/models/trip.rb</h3>
-    <h4><span class="yellow">87.5 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
+      <b>7</b> relevant lines. 
       <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -1665,16 +1645,16 @@
           <code class="ruby">  def from_date_after_to_date?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">    if from_date &gt; to_date</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">      errors.add :from_date, &quot;must be after start date&quot;</code>
+          <code class="ruby">      # errors.add :from_date, &quot;must be after start date&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -1822,54 +1802,6 @@
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="19">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="c85edb2ac5e9b3419196abdc384e0ed9b660ae33">
-  <div class="header">
-    <h3>app/models/user_tour.rb</h3>
-    <h4><span class="red">0.0 %</span> covered</h4>
-    <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="missed" data-hits="0" data-linenumber="1">
-          
-          
-          <code class="ruby">class UserTour &lt; ApplicationRecord</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="2">
-          
-          
-          <code class="ruby">  belongs_to :user</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
-          
-          <code class="ruby">  belongs_to :tour</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="4">
-          
-          
-          <code class="ruby">  belongs_to :trip</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="5">
           
           
           <code class="ruby">end</code>

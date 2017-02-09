@@ -1,20 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'Bio' do
 
-    before do
-      @user = User.create(email: "test@test.com", password: "123456")
-      @user.update(bio: "about me")
-    end
+    # it 'should validate presence' do
+    #   user = User.new
+    #   user.email = '' # invalid state
+    #   user.valid? # run validations
+    #   user.errors[:username].expect include("can't be blank") # check for presence of error
+    #
+    #   user.email = 'Tommy' # valid state
+    #   user.valid? # run validations
+    #   user.errors[:username].expect to_not include("can't be blank") # check for absence of error
+    # end
 
-    describe 'update biography' do
-      before do
-        @user.update(bio: "Let me tell you more about me")
-      end
-      it 'should allow a user to update their profile\'s biography' do
-        expect(@user.bio).to eq "Let me tell you more about me"
-      end
-    end
-  end
 end

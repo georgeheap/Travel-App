@@ -32,7 +32,7 @@
               <% end %>
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to "MESSAGES"%> <!-- , user_conversations_path(current_user) -->
+                  <%= link_to "MESSAGES", root_url %> 
                 </li>
               <% else %>
                 <li><%= link_to "ABOUT US", about_us_path %></li>

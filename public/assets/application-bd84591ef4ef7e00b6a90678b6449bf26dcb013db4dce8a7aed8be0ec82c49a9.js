@@ -12179,51 +12179,53 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
-$(document).ready(function () {
-  $(function () {
-    $.get('conversations.json',
-      function (data) {
-        data.conversations.forEach(function (conversation) {
-          var messages = conversation.messages
-          // var conversationDiv = $('<div id="conversation-with-' + conversation.contact.id + '"' + (messages[messages.length - 1].read ? "" : " class=\"unread\"") + '><a href="' + window.location.pathname.replace("conversations", "messages") + '"><h3>Conversation with ' + conversation.contact.username + '</h3><span class="message-preview">' + messages[messages.length - 1].body.substr(0, 50) + '</span></a><button id="delete-conversation-with-' + conversation.contact.id + '">DELETE</button></div>');
-          // $('#conversations').append(conversationDiv);
-
-          $('#conversation-with-' + conversation.contact.id + ' a').click(function (e) {
-            e.preventDefault();
-            var form = $('<form id="pass-id" action="' + window.location.pathname.replace("conversations", "messages") + '" method="GET"><input type="hidden" name="contact_id" value="' + conversation.contact.id + '" /></form>');
-            $('#conversation-with-' + conversation.contact.id).append(form);
-            $('#pass-id').submit();
-          });
-
-          $('#delete-conversation-with-' + conversation.contact.id).click(function () {
-            $.ajax({
-              type: 'delete',
-              url: window.location.pathname.replace("conversations", "messages") + '/' + messages[messages.length - 1].id,
-              data: {
-                contact_id: conversation.contact.id
-              }
-            }).done(function (data) {
-              $('#conversation-with-' + conversation.contact.id).remove();
-            });
-          });
-        });
-      }
-    );
-  });
-});
+// $(document).ready(function () {
+//   $(function () {
+//     $.get('conversations.json',
+//       function (data) {
+//         data.conversations.forEach(function (conversation) {
+//           var messages = conversation.messages
+//           // var conversationDiv = $('<div id="conversation-with-' + conversation.contact.id + '"' + (messages[messages.length - 1].read ? "" : " class=\"unread\"") + '><a href="' + window.location.pathname.replace("conversations", "messages") + '"><h3>Conversation with ' + conversation.contact.username + '</h3><span class="message-preview">' + messages[messages.length - 1].body.substr(0, 50) + '</span></a><button id="delete-conversation-with-' + conversation.contact.id + '">DELETE</button></div>');
+//           // $('#conversations').append(conversationDiv);
+//
+//           $('#conversation-with-' + conversation.contact.id + ' a').click(function (e) {
+//             e.preventDefault();
+//             var form = $('<form id="pass-id" action="' + window.location.pathname.replace("conversations", "messages") + '" method="GET"><input type="hidden" name="contact_id" value="' + conversation.contact.id + '" /></form>');
+//             $('#conversation-with-' + conversation.contact.id).append(form);
+//             $('#pass-id').submit();
+//           });
+//
+//           $('#delete-conversation-with-' + conversation.contact.id).click(function () {
+//             $.ajax({
+//               type: 'delete',
+//               url: window.location.pathname.replace("conversations", "messages") + '/' + messages[messages.length - 1].id,
+//               data: {
+//                 contact_id: conversation.contact.id
+//               }
+//             }).done(function (data) {
+//               $('#conversation-with-' + conversation.contact.id).remove();
+//             });
+//           });
+//         });
+//       }
+//     );
+//   });
+// });
 var path = window.location.pathname;
 function initMap() {
   mapDiv = $('#map');
-
   $.get(path + '.json', function (results) {
+
     var center = new google.maps.LatLng(results.lat,results.lng);
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 9,
+      zoom: 10,
       center: center,
     });
+    var icon = "https://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png";
     var locMarker = new google.maps.Marker({
       position: center,
-      map: map
+      map: map,
+      icon: icon
     });
     tourMarker(map);
   });
@@ -12234,70 +12236,84 @@ function tourMarker(map) {
       for (var i = 0; i < results.tours.length; i++) {
         var tour = results.tours[i];
         var latLng = new google.maps.LatLng(tour.lat,tour.lng);
+        console.log(name);
+        var infowindow = new google.maps.InfoWindow({
+          content: tour.name
+        });
         var marker = new google.maps.Marker({
           position: latLng,
-          map: map
+          map: map,
+          title: results.tours[i].name
         });
+        // marker.addListener('click', function() {
+        //   infowindow.open(map, marker);
+        // });
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+             return function () {
+                 infowindow.setContent(results.tours[i].name);
+                 infowindow.open(map, marker);
+             }
+         })(marker, i));
       }
     }
   });
 }
 ;
-$(document).ready(function () {
-  $(function () {
-    var contactId = window.location.href.match(/\?contact_id=\d+/)[0].replace("?contact_id=", "");
-    $.get('messages.json',
-      {
-        contact_id: contactId
-      },
-      function (data) {
-        loadMessages(data.messages);
-      }
-    );
-  });
-
-  $('#send-message-button').click(function (e) {
-    e.preventDefault();
-    var recipientId = window.location.search.substring(1,9999).split("&").
-    filter(function (param) {
-      return param.split("=")[0] == "contact_id";
-    })[0].split("=")[1];
-    $.post('/users/' + recipientId + '/messages',
-      {
-        recipient_id: recipientId,
-        message_body: $('#message-text-area').val()
-      },
-      function (data) {
-        if (data.notification) {
-          var notificationDiv = $('<div class="modal absolute-center is-responsive" style="display:block"><p>' + data.notification + '</p></div>');
-          $('body').append(notificationDiv);
-          $('.modal').show();
-          window.setTimeout(function () {
-            $('.modal').hide()
-          }, 3500);
-        }
-        else {
-          loadMessages([data]);
-        }
-        $('#message-text-area').val("");
-      }
-    );
-  });
-
-  function loadMessages(messages) {
-    messages.forEach(function (message) {
-      var messageDiv = $('<div id="' + message.id + '" class="message' + (message.sender_id == message.user_id ? " right" : "") + '"><p class="body">' + message.body + '</p><time class="sent timeago" datetime="' + message.created_at + '"></time></div>');
-      $('#messages').append(messageDiv);
-      var date = new Date(message.created_at);
-      if ((Date.now() - date) / 1000 / 24 / 60 / 60 < 1) {
-        $('.timeago').timeago();
-      }
-      else {
-        $('.timeago').text(date.toTimeString().substring(0, 5) + " " + formatDate(date.toDateString(), false));
-      }
-    });
-  }
-});
+// $(document).ready(function () {
+//   $(function () {
+//     var contactId = window.location.href.match(/\?contact_id=\d+/)[0].replace("?contact_id=", "");
+//     $.get('messages.json',
+//       {
+//         contact_id: contactId
+//       },
+//       function (data) {
+//         loadMessages(data.messages);
+//       }
+//     );
+//   });
+//
+//   $('#send-message-button').click(function (e) {
+//     e.preventDefault();
+//     var recipientId = window.location.search.substring(1,9999).split("&").
+//     filter(function (param) {
+//       return param.split("=")[0] == "contact_id";
+//     })[0].split("=")[1];
+//     $.post('/users/' + recipientId + '/messages',
+//       {
+//         recipient_id: recipientId,
+//         message_body: $('#message-text-area').val()
+//       },
+//       function (data) {
+//         if (data.notification) {
+//           var notificationDiv = $('<div class="modal absolute-center is-responsive" style="display:block"><p>' + data.notification + '</p></div>');
+//           $('body').append(notificationDiv);
+//           $('.modal').show();
+//           window.setTimeout(function () {
+//             $('.modal').hide()
+//           }, 3500);
+//         }
+//         else {
+//           loadMessages([data]);
+//         }
+//         $('#message-text-area').val("");
+//       }
+//     );
+//   });
+//
+//   function loadMessages(messages) {
+//     messages.forEach(function (message) {
+//       var messageDiv = $('<div id="' + message.id + '" class="message' + (message.sender_id == message.user_id ? " right" : "") + '"><p class="body">' + message.body + '</p><time class="sent timeago" datetime="' + message.created_at + '"></time></div>');
+//       $('#messages').append(messageDiv);
+//       var date = new Date(message.created_at);
+//       if ((Date.now() - date) / 1000 / 24 / 60 / 60 < 1) {
+//         $('.timeago').timeago();
+//       }
+//       else {
+//         $('.timeago').text(date.toTimeString().substring(0, 5) + " " + formatDate(date.toDateString(), false));
+//       }
+//     });
+//   }
+// });
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

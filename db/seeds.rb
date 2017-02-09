@@ -46,15 +46,22 @@ module SeedData
       unless Destination.find_by(name: "Hawaii")
         hawaii = Destination.create(name: "Hawaii", default_img: "Hawaii.jpg", img1: "Hawaii-2.jpg", img2: "Hawaii-15.jpg", description: "Kauai is one of the most beautiful of all the Hawaiian Islands.", lat: 22.104412, lng: -159.501731)
       end
-      unless Tour.find_by(name: "Learn to Surf")
+      if Tour.find_by(name: "Learn to Surf")
+        Tour.update(name: "Learn to Surf", destination_id: hawaii.id, description: "Learn to surf on the amazing Island of Kauai.", day_of_week: "Everyday", lat: 22.204784, lng: -159.501112)
+      else
         Tour.create(name: "Learn to Surf", destination_id: hawaii.id, description: "Learn to surf on the amazing Island of Kauai.", day_of_week: "Everyday", lat: 22.204784, lng: -159.501112)
       end
-      unless Tour.find_by(name: "Dolphin Cruise")
+      if Tour.find_by(name: "Dolphin Cruise")
+        Tour.update(name: "Dolphin Cruise", destination_id: hawaii.id, description: "Go on a boat trip to see wild dolphins.", day_of_week: "Everyday", lat: 21.901565, lng: -159.588034)
+      else
         Tour.create(name: "Dolphin Cruise", destination_id: hawaii.id, description: "Go on a boat trip to see wild dolphins.", day_of_week: "Everyday", lat: 21.901565, lng: -159.588034)
       end
-      unless Tour.find_by(name: "Icelandic Horse Riding")
+      if Tour.find_by(name: "Icelandic Horse Riding")
+        Tour.update(name: "Icelandic Horse Riding", destination_id: iceland.id, description: "Ride Icelandic Horses through the beautiful Icelandic countryside.", day_of_week: "Everyday", lat: 64.141331, lng: -21.847310)
+      else
         Tour.create(name: "Icelandic Horse Riding", destination_id: iceland.id, description: "Ride Icelandic Horses through the beautiful Icelandic countryside.", day_of_week: "Everyday", lat: 64.141331, lng: -21.847310)
       end
+
     end
   end
 end

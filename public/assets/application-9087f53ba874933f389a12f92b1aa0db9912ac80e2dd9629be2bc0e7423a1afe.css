@@ -3,46 +3,46 @@
   margin: 0;
 }
 
-/* line 6, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 5, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 html, body {
   overflow-x: hidden;
   font-family: helvetica, sans-serif;
   height: 100%;
   min-height: 100%;
 }
-/* line 11, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 10, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 html a:hover, body a:hover {
   text-decoration: none;
 }
 
-/* line 16, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 14, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header {
   background-color: #00008B;
   border: none;
   padding: 1rem;
 }
-/* line 20, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 18, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header .header-name {
   padding-left: 1rem;
   font-size: 32px;
   font-family: sans-serif;
 }
-/* line 27, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 25, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header a {
   color: white;
   letter-spacing: 2px;
 }
-/* line 30, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 28, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header a:hover {
   text-decoration: none;
   color: white;
 }
-/* line 35, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 33, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header ul {
   text-align: center;
   margin-top: 1.4rem;
 }
-/* line 39, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 37, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header li {
   text-decoration: none;
   color: #FFFFFF;
@@ -50,16 +50,16 @@ header li {
   padding: 0.5rem 2rem;
   border-right: 2px solid #FFFFFF;
 }
-/* line 45, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 43, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header li:last-child {
   border-right: none;
 }
-/* line 48, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 46, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header li a {
   color: white;
   padding: 1rem;
 }
-/* line 51, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 49, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 header li a:hover, header li a:focus {
   text-decoration: none;
   background-color: #000000;
@@ -86,6 +86,18 @@ header li a:hover, header li a:focus {
 }
 
 /* line 74, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+.heading {
+  text-align: center;
+}
+/* line 76, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+.heading h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 2rem auto;
+}
+
+/* line 84, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 .link-btn {
   background-color: #C0C0C0;
   border-radius: 5px;
@@ -95,18 +107,18 @@ header li a:hover, header li a:focus {
   text-align: center;
   color: white;
 }
-/* line 82, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 92, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 .link-btn:hover {
   background-color: gray;
   color: white;
 }
 
-/* line 88, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 98, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 #all-link:hover {
   text-decoration: none;
 }
 
-/* line 92, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 104, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 footer {
   color: white;
   background-color: #00008B;
@@ -115,7 +127,7 @@ footer {
   bottom: 0px;
   width: 100%;
 }
-/* line 99, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
+/* line 111, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/application.scss */
 footer p {
   float: right;
   padding: 2rem;
@@ -129,23 +141,28 @@ footer p {
 }
 
 /* line 10, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+.dest-main {
+  margin-bottom: 3rem;
+}
+
+/* line 13, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 .destination {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 14, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 18, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 .large_img {
   max-height: 300px;
 }
 
-/* line 17, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 21, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 #thumbs {
   padding-top: 10px;
   overflow: hidden;
 }
 
-/* line 21, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 25, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 #thumbs img, #largeImage {
   border: 1px solid gray;
   padding: 4px;
@@ -153,40 +170,40 @@ footer p {
   cursor: pointer;
 }
 
-/* line 27, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 31, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 #thumbs img {
   float: left;
   margin-right: 6px;
 }
 
-/* line 31, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 35, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 #panel {
   position: relative;
 }
 
-/* line 34, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 38, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 .extra_img {
   height: 95px;
   max-width: 140px;
 }
 
-/* line 38, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 42, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 .thumb-img {
   height: 70px;
   max-width: 100px;
 }
 
-/* line 42, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 46, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 .sidebar {
   height: 100%;
 }
 
-/* line 46, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 50, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 .map {
   height: 100%;
 }
 
-/* line 50, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
+/* line 54, /Users/georgeheap/projects/wegotcoders/Final Project/travel_app/app/assets/stylesheets/destinations.scss */
 #map {
   width: 100%;
   height: 600px;

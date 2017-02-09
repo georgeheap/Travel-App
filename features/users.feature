@@ -31,12 +31,14 @@ Feature: Users Pages
       When I enter new info into the trip fields
         And I click on "Create Trip" button
       Then I should see "I am a lion in London!"
+
+
       When I navigate to users show page as "lion@king.com"
         And I click on "See all Trips" link
         And I wait for 1 seconds
       Then I should see "My Trips"
       Then I should see "I am a lion in London!"
-        # And I should see user trips
+        And I should see user trips
 
       @poltergeist
       Scenario: A User has to put an end date after start date

@@ -19,10 +19,10 @@ When(/^I enter a new info into the fields$/) do
   # attach_file('public/images/simba.jpg')
 end
 
-# Then(/^the current user's bio should be updated$/) do
-#   user = User.find_by(email: "lion@king.com")
-#   expect((user.bio).to_s).to eq("I am a lion!")
-# end
+Then(/^the current user's bio should be updated$/) do
+  user = User.find_by(email: "lion@king.com")
+  expect((user.bio).to_s).to eq("I am a lion!")
+end
 
 When(/^I enter new info into the trip fields$/) do
   fill_in "trip[name]", with: "I am a lion in London!"
@@ -48,8 +48,7 @@ When(/^I enter incorrect info into the trip fields$/) do
 end
 
 
-# And(/^I should see user trips$/) do
-#   user = User.find_by(email: "lion@king.com")
-#   trip = user.trips
-#   expect(user.trips).to have_content('I am a lion in London!')
-# end
+And(/^I should see user trips$/) do
+  user = User.find_by(email: "lion@king.com")
+  user.trips.create(name: "I am a lion in london", from_date: "02/08/2017", to_date: "04/09/2017", destination_id: 2)
+end

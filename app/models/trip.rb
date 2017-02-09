@@ -8,7 +8,7 @@ class Trip < ApplicationRecord
 
   def from_date_after_to_date?
     if from_date > to_date
-      errors.add :from_date, "must be after start date"
+      # errors.add :from_date, "must be after start date"
     end
   end
 end
