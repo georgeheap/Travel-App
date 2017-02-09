@@ -12,7 +12,7 @@
       <%= f.select :tour_type, ['Active', 'Animals', 'Photography', 'Sightseeing', 'Day Trip', 'Walking'], :required => true %>
     </div>
     <%= f.hidden_field :destination_id, value: @destination.id %>
-    
+
     <div class="field">
       <%= f.label :description %>
       <%= f.text_field :description, :required => true %>
@@ -44,5 +44,5 @@
     </div>
   <% end %>
 
-  <%= link_to 'Back', destination_path(:destination_id) %>
+  <%= link_to 'Back', destinations_path, class: "link-btn" %>
 </div>
